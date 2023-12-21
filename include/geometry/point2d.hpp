@@ -55,7 +55,18 @@ class Point2D {
    * @return Point2D& Reference of Point2D object
    */
   auto operator=(Point2D&& other) -> Point2D& = default;
+  /**
+   * @brief Clculate distance between this point and target point
+   * @param target Other Point2D object to calculate distance
+   * @return double Euclidean distance betwwen this point and target point
+   */
   auto CalculateDistance(const Point2D& target) const -> double;
+  /**
+   * @brief Clculate distance between lhs point and rhs point
+   * @param lhs Left hand side Point2D object
+   * @param rhs Right hand side Point2D object
+   * @return double double Euclidean distance betwwen lhs point and rhs point
+   */
   [[nodiscard]] static auto CalculateDistance(const Point2D& lhs,
                                               const Point2D& rhs) -> double;
 
