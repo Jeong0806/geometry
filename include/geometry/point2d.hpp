@@ -55,6 +55,9 @@ class Point2D {
    * @return Point2D& Reference of Point2D object
    */
   auto operator=(Point2D&& other) -> Point2D& = default;
+  auto CalculateDistance(const Point2D& target) const -> double;
+  [[nodiscard]] static auto CalculateDistance(const Point2D& lhs,
+                                              const Point2D& rhs) -> double;
 
  private:
   double x_{0.0};  ///< x coordinate
