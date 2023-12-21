@@ -69,6 +69,10 @@ class Point2D {
    */
   [[nodiscard]] static auto CalculateDistance(const Point2D& lhs,
                                               const Point2D& rhs) -> double;
+  void SetX(double x);
+  void SetY(double y);
+  [[nodiscard]] auto GetX() const -> double;
+  [[nodiscard]] auto GetY() const -> double;
 
  private:
   double x_{0.0};  ///< x coordinate
