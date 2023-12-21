@@ -129,7 +129,19 @@ class Point2D {
    * @throws invalid_argument If operand is zero, nan, or inf
    */
   auto operator/(double scalar) const -> Point2D;
+  /**
+   * @brief Check if the coordinates x and y of this and target object have the same values
+   * @param other Point2D object
+   * @return true If this and target object's x, y coordinates is equal
+   * @return false If this and target object's x, y coordinates is not equal
+   */
   auto operator==(const Point2D& other) const -> bool;
+  /**
+   * @brief Check if the coordinates x and y of this and target object have the different values
+   * @param other Point2D object
+   * @return true If this and target object's x, y coordinates is not equal
+   * @return false If this and target object's x, y coordinates is equal
+   */
   auto operator!=(const Point2D& other) const -> bool;
 
  protected:
