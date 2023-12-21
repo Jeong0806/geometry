@@ -69,7 +69,15 @@ class Point2D {
    */
   [[nodiscard]] static auto CalculateDistance(const Point2D& lhs,
                                               const Point2D& rhs) -> double;
+  /**
+   * @brief Set x coordinate value
+   * @param x Double type input x coordinate value
+   */
   void SetX(double x);
+  /**
+   * @brief Set y coordinate value
+   * @param y Double type input y coordinate value
+   */
   void SetY(double y);
   [[nodiscard]] auto GetX() const -> double;
   [[nodiscard]] auto GetY() const -> double;
