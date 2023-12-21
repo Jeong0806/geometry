@@ -43,6 +43,7 @@ class Point2D {
    * @brief Destroy the Point2D object
    */
   virtual ~Point2D() = default;
+
   /**
    * @brief Copy assignment operator
    * @param other Point2D object
@@ -55,6 +56,7 @@ class Point2D {
    * @return Point2D& Reference of Point2D object
    */
   auto operator=(Point2D&& other) -> Point2D& = default;
+
   /**
    * @brief Clculate distance between this point and target point
    * @param target Other Point2D object to calculate distance
@@ -69,6 +71,7 @@ class Point2D {
    */
   [[nodiscard]] static auto CalculateDistance(const Point2D& lhs,
                                               const Point2D& rhs) -> double;
+
   /**
    * @brief Set x coordinate value
    * @param x Double type input x coordinate value
@@ -89,9 +92,20 @@ class Point2D {
    * @return double y coordinate value of this point
    */
   [[nodiscard]] auto GetY() const -> double;
+
   auto operator+(const Point2D& other) const -> Point2D;
   auto operator-(const Point2D& other) const -> Point2D;
+  /**
+   * @brief Added target object's x, y coordinates in this object's
+   * @param other Point2D object
+   * @return Point2D Point2D& Reference of Point2D object
+   */
   auto operator+=(const Point2D& other) const -> Point2D;
+  /**
+   * @brief Subtracted target object's x, y coordinates in this object's
+   * @param other Point2D object
+   * @return Point2D Point2D& Reference of Point2D object
+   */
   auto operator-=(const Point2D& other) const -> Point2D;
   auto operator*(double scalar) const -> Point2D;
   auto operator/(double scalar) const -> Point2D;
