@@ -20,6 +20,8 @@ namespace Jeong0806::geometry {
 class Point2D {
  public:
  private:
+  double x_{0.0};
+  double y_{0.0};
 };
 }  // namespace Jeong0806::geometry
 
