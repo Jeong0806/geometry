@@ -28,8 +28,8 @@ class Point2D {
   ~Point2D() = default;
 
  private:
-  double x_{0.0};
-  double y_{0.0};
+  double x_{0.0};  ///< x coordinate
+  double y_{0.0};  ///< y coordinate
 };
 }  // namespace Jeong0806::geometry
 
