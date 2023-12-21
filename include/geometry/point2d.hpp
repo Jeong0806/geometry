@@ -129,8 +129,8 @@ class Point2D {
    * @throws invalid_argument If operand is zero, nan, or inf
    */
   auto operator/(double scalar) const -> Point2D;
-  auto operator==(const Point2D& other) const -> Point2D;
-  auto operator!=(const Point2D& other) const -> Point2D;
+  auto operator==(const Point2D& other) const -> bool;
+  auto operator!=(const Point2D& other) const -> bool;
 
  protected:
  private:
