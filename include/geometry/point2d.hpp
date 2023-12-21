@@ -13,4 +13,14 @@
 #ifndef Jeong0806_GEOMETRY_POINT_2D_HPP_
 #define Jeong0806_GEOMETRY_POINT_2D_HPP_
 
+namespace Jeong0806::geometry {
+/**
+ * @brief Point class with 2-demension
+ */
+class Point2D {
+ public:
+ private:
+};
+}  // namespace Jeong0806::geometry
+
 #endif  // Jeong0806_GEOMETRY_POINT_2D_HPP_
