@@ -116,6 +116,11 @@ class Point2D {
    * @return Point2D Point2D& Reference of Point2D object
    */
   auto operator-=(const Point2D& other) const -> Point2D;
+  /**
+   * @brief Multiply scalar by the coordinates x and y of this
+   * @param scalar Double type operand
+   * @return Point2D Point2D& Reference of Point2D object
+   */
   auto operator*(double scalar) const -> Point2D;
   auto operator/(double scalar) const -> Point2D;
   auto operator==(const Point2D& other) const -> Point2D;
