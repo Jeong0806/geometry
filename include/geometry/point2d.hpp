@@ -92,17 +92,26 @@ class Point2D {
    * @return double y coordinate value of this point
    */
   [[nodiscard]] auto GetY() const -> double;
-
+  /**
+   * @brief Add the x and y coordinates of this and target object respectively
+   * @param other Point2D object
+   * @return Point2D Point2D& Reference of Point2D object
+   */
   auto operator+(const Point2D& other) const -> Point2D;
+  /**
+   * @brief Subtract the x and y coordinates of this and target object respectively
+   * @param other Point2D object
+   * @return Point2D Point2D& Reference of Point2D object
+   */
   auto operator-(const Point2D& other) const -> Point2D;
   /**
-   * @brief Added target object's x, y coordinates in this object's
+   * @brief Add target object's x, y coordinates in this object's
    * @param other Point2D object
    * @return Point2D Point2D& Reference of Point2D object
    */
   auto operator+=(const Point2D& other) const -> Point2D;
   /**
-   * @brief Subtracted target object's x, y coordinates in this object's
+   * @brief Subtract target object's x, y coordinates in this object's
    * @param other Point2D object
    * @return Point2D Point2D& Reference of Point2D object
    */
