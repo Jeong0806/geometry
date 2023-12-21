@@ -19,13 +19,30 @@ namespace Jeong0806::geometry {
  */
 class Point2D {
  public:
+  /**
+   * @brief Construct a new Point2D object
+   */
   Point2D() = default;
+  /**
+   * @brief Construct a new Point2D object with x, y coordinate values
+   * @param x Double type x coordinate value
+   * @param y Double type y coordinate value
+   */
   Point2D(double x, double y);
-
+  /**
+   * @brief Copy construct a new Point2D object with other Point2D object
+   * @param other Point2D object
+   */
   Point2D(const Point2D& other) = default;
-  Point2D(Point2D&& other) = default;
-
-  ~Point2D() = default;
+  /**
+   * @brief Move construct a new Point2D object with other Point2D object
+   * @param other Point2D object
+   */
+  Point2D(Point2D&& other) noexcept = default;
+  /**
+   * @brief Destroy the Point2D object
+   */
+  virtual ~Point2D() = default;
 
  private:
   double x_{0.0};  ///< x coordinate
