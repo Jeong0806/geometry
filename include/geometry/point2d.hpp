@@ -122,6 +122,12 @@ class Point2D {
    * @return Point2D Point2D& Reference of Point2D object
    */
   auto operator*(double scalar) const -> Point2D;
+  /**
+   * @brief Divide scalar by the coordinates x and y of this
+   * @param scalar Double type operand
+   * @return Point2D Point2D& Reference of Point2D object
+   * @throws invalid_argument If operand is zero, nan, or inf
+   */
   auto operator/(double scalar) const -> Point2D;
   auto operator==(const Point2D& other) const -> Point2D;
   auto operator!=(const Point2D& other) const -> Point2D;
