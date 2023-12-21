@@ -1,0 +1,17 @@
+# build
+build/**
+
+# Thirdparty
+thirdparty/install/**
+
+# VSCODE
+.vscode/**
+.idea/**
+.cache/**
+.history/**
+
+# documentation
+documents/**
+
+# Windows
+.DS_Store
