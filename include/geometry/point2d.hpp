@@ -79,9 +79,26 @@ class Point2D {
    * @param y Double type input y coordinate value
    */
   void SetY(double y);
+  /**
+   * @brief Get x coordinate value of this point
+   * @return double x coordinate value of this point
+   */
   [[nodiscard]] auto GetX() const -> double;
+  /**
+   * @brief Get y coordinate value of this point
+   * @return double y coordinate value of this point
+   */
   [[nodiscard]] auto GetY() const -> double;
+  auto operator+(const Point2D& other) const -> Point2D;
+  auto operator-(const Point2D& other) const -> Point2D;
+  auto operator+=(const Point2D& other) const -> Point2D;
+  auto operator-=(const Point2D& other) const -> Point2D;
+  auto operator*(double scalar) const -> Point2D;
+  auto operator/(double scalar) const -> Point2D;
+  auto operator==(const Point2D& other) const -> Point2D;
+  auto operator!=(const Point2D& other) const -> Point2D;
 
+ protected:
  private:
   double x_{0.0};  ///< x coordinate
   double y_{0.0};  ///< y coordinate
