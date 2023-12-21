@@ -19,6 +19,14 @@ namespace Jeong0806::geometry {
  */
 class Point2D {
  public:
+  Point2D() = default;
+  Point2D(double x, double y);
+
+  Point2D(const Point2D& other) = default;
+  Point2D(Point2D&& other) = default;
+
+  ~Point2D() = default;
+
  private:
   double x_{0.0};
   double y_{0.0};
