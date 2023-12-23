@@ -107,15 +107,15 @@ class Point2D {
   /**
    * @brief Add target object's x, y coordinates in this object's
    * @param other Point2D object
-   * @return Point2D Point2D& Reference of Point2D object
+   * @return Point2D& Point2D& Reference of Point2D object
    */
-  auto operator+=(const Point2D& other) const -> Point2D;
+  auto operator+=(const Point2D& other) const -> Point2D&;
   /**
    * @brief Subtract target object's x, y coordinates in this object's
    * @param other Point2D object
-   * @return Point2D Point2D& Reference of Point2D object
+   * @return Point2D& Point2D& Reference of Point2D object
    */
-  auto operator-=(const Point2D& other) const -> Point2D;
+  auto operator-=(const Point2D& other) const -> Point2D&;
   /**
    * @brief Multiply scalar by the coordinates x and y of this
    * @param scalar Double type operand
