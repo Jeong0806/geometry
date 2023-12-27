@@ -55,7 +55,7 @@ class Distance {
   /**
    * @brief Destroy the Distance object
    */
-  virtual ~Distance();
+  virtual ~Distance() = default;
 
  protected:
  private:
