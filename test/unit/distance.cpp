@@ -4,3 +4,11 @@
 #include "geometry/distance.hpp"
 
 #include "gtest/gtest.h"
+
+namespace Jeong0806::geometry{
+  TEST(GeometryDistance, Constructor){
+    Distance distance1;
+    Distance distance2(distance1);
+    Distance distance3(std::move(Distance()));
+  }
+}
