@@ -87,4 +87,8 @@ auto Distance::GetValue(const DistanceType &type) const -> double {
   }
   return result;
 }
+
+auto Distance::SetValue(double value, const DistanceType &type) -> void {
+  nanometer_ = ScaleDistanceToNanometer(value, type);
+}
 }  // namespace Jeong0806::geometry

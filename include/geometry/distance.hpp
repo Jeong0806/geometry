@@ -71,11 +71,17 @@ class Distance {
   auto operator=(Distance&& other) -> Distance& = default;
 
   /**
-   * @brief
-   * @param type
-   * @return double
+   * @brief Get the distance value for distance type
+   * @param type The distance type
+   * @return double The distance value
    */
-  [[nodiscard]]auto GetValue(const DistanceType& type) const -> double;
+  [[nodiscard]] auto GetValue(const DistanceType& type) const -> double;
+  /**
+   * @brief Set the distance value for distance type
+   * @param value The distance value
+   * @param type The distance type
+   */
+  auto SetValue(double value, const DistanceType& type) -> void;
 
  protected:
  private:
