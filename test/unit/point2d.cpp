@@ -44,4 +44,20 @@ TEST(GeometryPoint2D, CalculateDistance) {
               source.CalculateDistance(target));
   }
 }
+
+TEST(GeometryPoint2D, StaticCalculateDistance) {
+  for (uint32_t i = 0; i < kTestCount; ++i) {
+    const auto kSourceX = static_cast<double>(std::rand());
+    const auto kSourceY = static_cast<double>(std::rand());
+    const auto kTargetX = static_cast<double>(std::rand());
+    const auto kTargetY = static_cast<double>(std::rand());
+
+    Point2D source(kSourceX, kSourceY);
+    Point2D target(kTargetX, kTargetY);
+
+    EXPECT_EQ(std::sqrt(std::pow((kSourceX - kTargetX), 2.0) +
+              std::pow((kSourceY - kTargetY), 2.0)),
+              Point2D::CalculateDistance(source, target));
+  }
+}
 }  // namespace Jeong0806::geometry
