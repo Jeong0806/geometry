@@ -28,4 +28,20 @@ TEST(GeometryPoint2D, AssignmentOperator) {
   auto point2 = point1;
   auto point3 = std::move(Point2D());
 }
+
+TEST(GeometryPoint2D, CalculateDistance) {
+  for (uint32_t i = 0; i < kTestCount; ++i) {
+    const auto kSourceX = static_cast<double>(std::rand());
+    const auto kSourceY = static_cast<double>(std::rand());
+    const auto kTargetX = static_cast<double>(std::rand());
+    const auto kTargetY = static_cast<double>(std::rand());
+
+    Point2D source(kSourceX, kSourceY);
+    Point2D target(kTargetX, kTargetY);
+
+    EXPECT_EQ(std::sqrt(std::pow((kSourceX - kTargetX), 2.0) +
+              std::pow((kSourceY - kTargetY), 2.0)),
+              source.CalculateDistance(target));
+  }
+}
 }  // namespace Jeong0806::geometry
