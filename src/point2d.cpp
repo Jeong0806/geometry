@@ -18,7 +18,12 @@ namespace Jeong0806::geometry {
 Point2D::Point2D(double x, double y) : x_(x), y_(y) {}
 
 auto Point2D::CalculateDistance(const Point2D& target) const -> double {
-  return std::sqrt(std::pow((x_ - target.x_), 2.0) +
-              std::pow((y_ - target.y_), 2.0));
+  return Point2D::CalculateDistance(*this, target);
+}
+
+auto Point2D::CalculateDistance(const Point2D& lhs, const Point2D& rhs)
+    -> double {
+  return std::sqrt(std::pow((lhs.x_ - rhs.x_), 2.0) +
+                   std::pow((lhs.y_ - rhs.y_), 2.0));
 }
 }  // namespace Jeong0806::geometry
