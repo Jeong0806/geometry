@@ -57,6 +57,19 @@ class Distance {
    */
   virtual ~Distance() = default;
 
+  /**
+   * @brief
+   * @param other
+   * @return Distance&
+   */
+  auto operator=(const Distance& other) -> Distance& = default;
+  /**
+   * @brief
+   * @param other
+   * @return Distance&
+   */
+  auto operator=(Distance&& other) -> Distance& = default;
+
  protected:
  private:
   int64_t nanometer_{0};
