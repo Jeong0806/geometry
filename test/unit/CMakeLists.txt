@@ -4,7 +4,7 @@ set(SLASH "/")
 set(UNDER_BAR "_")
 
 set(${PROJECT_NAME}_${TEST_TYPE}_SOURCE_FILES
-  utils
+  point2d
   # ! Add source files here
 )
 
