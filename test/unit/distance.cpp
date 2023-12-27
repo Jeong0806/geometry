@@ -72,5 +72,33 @@ TEST(GeometryDistance, GetValue) {
   }
 }
 
+TEST(GeometryDistance, SetValue) {
+  for (uint32_t i; i < kTestCount; ++i) {
+    const auto kValue = static_cast<double>(std::rand());
 
+    Distance distance1;
+    distance1.SetValue(kValue, Distance::DistanceType::kKilometer);
+    EXPECT_EQ(kValue, distance1.GetValue(Distance::DistanceType::kKilometer));
+
+    Distance distance2;
+    distance2.SetValue(kValue, Distance::DistanceType::kMeter);
+    EXPECT_EQ(kValue, distance2.GetValue(Distance::DistanceType::kMeter));
+
+    Distance distance3;
+    distance3.SetValue(kValue, Distance::DistanceType::kCentimeter);
+    EXPECT_EQ(kValue, distance3.GetValue(Distance::DistanceType::kCentimeter));
+
+    Distance distance4;
+    distance4.SetValue(kValue, Distance::DistanceType::kMillimeter);
+    EXPECT_EQ(kValue, distance4.GetValue(Distance::DistanceType::kMillimeter));
+
+    Distance distance5;
+    distance5.SetValue(kValue, Distance::DistanceType::kMicrometer);
+    EXPECT_EQ(kValue, distance5.GetValue(Distance::DistanceType::kMicrometer));
+
+    Distance distance6;
+    distance6.SetValue(kValue, Distance::DistanceType::kNanometer);
+    EXPECT_EQ(kValue, distance6.GetValue(Distance::DistanceType::kNanometer));
+  }
+}
 }  // namespace Jeong0806::geometry
