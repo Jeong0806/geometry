@@ -40,7 +40,7 @@ TEST(GeometryPoint2D, CalculateDistance) {
     Point2D target(kTargetX, kTargetY);
 
     EXPECT_EQ(std::sqrt(std::pow((kSourceX - kTargetX), 2.0) +
-              std::pow((kSourceY - kTargetY), 2.0)),
+                        std::pow((kSourceY - kTargetY), 2.0)),
               source.CalculateDistance(target));
   }
 }
@@ -56,12 +56,12 @@ TEST(GeometryPoint2D, StaticCalculateDistance) {
     Point2D target(kTargetX, kTargetY);
 
     EXPECT_EQ(std::sqrt(std::pow((kSourceX - kTargetX), 2.0) +
-              std::pow((kSourceY - kTargetY), 2.0)),
+                        std::pow((kSourceY - kTargetY), 2.0)),
               Point2D::CalculateDistance(source, target));
   }
 }
 
-TEST(GeometryPoint2D, GetX){
+TEST(GeometryPoint2D, GetX) {
   for (uint32_t i = 0; i < kTestCount; ++i) {
     const auto kSourceX = static_cast<double>(std::rand());
 
@@ -71,11 +71,33 @@ TEST(GeometryPoint2D, GetX){
   }
 }
 
-TEST(GeometryPoint2D, GetY){
+TEST(GeometryPoint2D, GetY) {
   for (uint32_t i = 0; i < kTestCount; ++i) {
     const auto kSourceY = static_cast<double>(std::rand());
 
     Point2D source(0.0, kSourceY);
+
+    EXPECT_EQ(source.GetY(), kSourceY);
+  }
+}
+
+TEST(GeometryPoint2D, SetX) {
+  for (uint32_t i = 0; i < kTestCount; ++i) {
+    const auto kSourceX = static_cast<double>(std::rand());
+
+    Point2D source;
+    source.SetX(kSourceX);
+
+    EXPECT_EQ(source.GetX(), kSourceX);
+  }
+}
+
+TEST(GeometryPoint2D, SetY) {
+  for (uint32_t i = 0; i < kTestCount; ++i) {
+    const auto kSourceY = static_cast<double>(std::rand());
+
+    Point2D source;
+    source.SetY(kSourceY);
 
     EXPECT_EQ(source.GetY(), kSourceY);
   }
