@@ -58,15 +58,15 @@ class Distance {
   virtual ~Distance() = default;
 
   /**
-   * @brief
-   * @param other
-   * @return Distance&
+   * @brief Copy assignment operator
+   * @param other Distance object
+   * @return Distance& Reference of Distance object
    */
   auto operator=(const Distance& other) -> Distance& = default;
   /**
-   * @brief
-   * @param other
-   * @return Distance&
+   * @brief Move assignment operator
+   * @param other Distance object
+   * @return Distance& Reference of Distance object
    */
   auto operator=(Distance&& other) -> Distance& = default;
 
