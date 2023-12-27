@@ -11,3 +11,5 @@
 // Author Jeong Seong In (0806jsi@gmail.com)
 
 #include "geometry/distance.hpp"
+
+namespace Jeong0806::geometry {}
