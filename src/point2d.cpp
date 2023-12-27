@@ -12,6 +12,13 @@
 
 #include "geometry/point2d.hpp"
 
+#include <cmath>
+
 namespace Jeong0806::geometry {
 Point2D::Point2D(double x, double y) : x_(x), y_(y) {}
+
+auto Point2D::CalculateDistance(const Point2D& target) const -> double {
+  return std::sqrt(std::pow((x_ - target.x_), 2.0) +
+              std::pow((y_ - target.y_), 2.0));
+}
 }  // namespace Jeong0806::geometry
