@@ -19,5 +19,7 @@ namespace Jeong0806::geometry {
 TEST(GeometryPoint2D, Constructor) {
   Point2D point1;
   Point2D point2(0.0,0.0);
+  Point2D point3(point1);
+  Point2D point4(std::move(point2));
 }
 }  // namespace jeong0806::geometry
