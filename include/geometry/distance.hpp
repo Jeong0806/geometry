@@ -102,6 +102,21 @@ class Distance {
   auto operator>(const Distance& other) const -> bool;
   auto operator>=(const Distance& other) const -> bool;
 
+  /**
+   * @brief Add other distance object
+   * @param other The other distance object
+   * @return Distance The result of addition
+   */
+  auto operator+(const Distance& other) const -> Distance;
+  auto operator-(const Distance& other) const -> Distance;
+  auto operator*(double scale) const -> Distance;
+  auto operator/(double scale) const -> Distance;
+
+  auto operator+=(const Distance& other) const -> void;
+  auto operator-=(const Distance& other) const -> void;
+  auto operator*=(double scale) const -> void;
+  auto operator/=(double scale) const -> void;
+
  protected:
  private:
   int64_t nanometer_{0};
