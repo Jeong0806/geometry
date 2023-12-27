@@ -6,7 +6,7 @@ project(
   HOMEPAGE_URL "https://github.com/google/googletest.git"
 )
 
-set(${PROJECT_NAME}_GIT_TAG release-1.12.1 CACHE STRING "GTEest git tag")
+set(${PROJECT_NAME}_GIT_TAG release-1.12.1 CACHE STRING "GTest git tag")
 set(${PROJECT_NAME}_PREFIX ${CMAKE_BINARY_DIR}/${PROJECT_NAME}-prefix CACHE STRING "GTest install prefix")
 set(${PROJECT_NAME}_INSTALL_PATH ${CMAKE_SOURCE_DIR}/thirdparty/install/${CMAKE_BUILD_TYPE}/${PROJECT_NAME} CACHE STRING "GTest install path")
 set(${PROJECT_NAME}_CMAKE_PATH ${${PROJECT_NAME}_INSTALL_PATH}/lib/cmake/GTest CACHE STRING "GTest cmake path")
