@@ -60,4 +60,24 @@ TEST(GeometryPoint2D, StaticCalculateDistance) {
               Point2D::CalculateDistance(source, target));
   }
 }
+
+TEST(GeometryPoint2D, GetX){
+  for (uint32_t i = 0; i < kTestCount; ++i) {
+    const auto kSourceX = static_cast<double>(std::rand());
+
+    Point2D source(kSourceX, 0.0);
+
+    EXPECT_EQ(source.GetX(), kSourceX);
+  }
+}
+
+TEST(GeometryPoint2D, GetY){
+  for (uint32_t i = 0; i < kTestCount; ++i) {
+    const auto kSourceY = static_cast<double>(std::rand());
+
+    Point2D source(0.0, kSourceY);
+
+    EXPECT_EQ(source.GetY(), kSourceY);
+  }
+}
 }  // namespace Jeong0806::geometry
