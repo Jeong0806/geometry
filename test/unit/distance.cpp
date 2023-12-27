@@ -41,4 +41,36 @@ TEST(GeometryDistance, AssignmentOperator) {
   auto distance2 = distance1;
   auto distance3 = std::move(Distance());
 }
+
+TEST(GeometryDistance, GetValue) {
+  for (uint32_t i; i < kTestCount; ++i) {
+    const auto kValue = static_cast<double>(std::rand());
+
+    Distance distance1(static_cast<double>(kValue),
+                       Distance::DistanceType::kKilometer);
+    EXPECT_EQ(kValue, distance1.GetValue(Distance::DistanceType::kKilometer));
+
+    Distance distance2(static_cast<double>(kValue),
+                       Distance::DistanceType::kMeter);
+    EXPECT_EQ(kValue, distance2.GetValue(Distance::DistanceType::kMeter));
+
+    Distance distance3(static_cast<double>(kValue),
+                       Distance::DistanceType::kCentimeter);
+    EXPECT_EQ(kValue, distance3.GetValue(Distance::DistanceType::kCentimeter));
+
+    Distance distance4(static_cast<double>(kValue),
+                       Distance::DistanceType::kMillimeter);
+    EXPECT_EQ(kValue, distance4.GetValue(Distance::DistanceType::kMillimeter));
+
+    Distance distance5(static_cast<double>(kValue),
+                       Distance::DistanceType::kMicrometer);
+    EXPECT_EQ(kValue, distance5.GetValue(Distance::DistanceType::kMicrometer));
+
+    Distance distance6(static_cast<double>(kValue),
+                       Distance::DistanceType::kNanometer);
+    EXPECT_EQ(kValue, distance6.GetValue(Distance::DistanceType::kNanometer));
+  }
+}
+
+
 }  // namespace Jeong0806::geometry
