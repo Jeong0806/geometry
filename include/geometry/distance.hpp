@@ -13,7 +13,8 @@
 #ifndef Jeong0806_GEOMETRY_DISTANCE_HPP_
 #define Jeong0806_GEOMETRY_DISTANCE_HPP_
 
-namespace Jeong0806::distance {
+#include <cstdint>
+namespace Jeong0806::geometry {
 /**
  * @brief Distance class for abstract distance
  */
@@ -31,9 +32,35 @@ class Distance {
     kNanometer = 5
   };
 
+  /**
+   * @brief Construct a new Distance object
+   */
+  Distance() = default;
+  /**
+   * @brief
+   * @param value
+   * @param type
+   */
+  Distance(double value, DistanceType type = DistanceType::kMeter);
+  /**
+   * @brief Copy construct a new Distance object with other Distance object
+   * @param other Distance object
+   */
+  Distance(const Distance& other) = default;
+  /**
+   * @brief Move construct a new Distance object with other Distance object
+   * @param other Distance object
+   */
+  Distance(Distance&& other) noexcept = default;
+  /**
+   * @brief Destroy the Distance object
+   */
+  virtual ~Distance();
+
  protected:
  private:
+  int64_t nanometer_{0};
 };
-}  // namespace Jeong0806::distance
+}  // namespace Jeong0806::geometry
 
 #endif  // Jeong0806_GEOMETRY_DISTANCE_HPP_
