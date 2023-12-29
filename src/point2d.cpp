@@ -33,4 +33,8 @@ auto Point2D::GetY() const -> double { return y_; }
 
 auto Point2D::SetX(double x) -> void { x_ = x; }
 auto Point2D::SetY(double y) -> void { y_ = y; }
+
+auto Point2D::operator+(const Point2D& other) const -> Point2D {
+  return Point2D(x_ + other.x_, y_ + other.y_);
+}
 }  // namespace Jeong0806::geometry
