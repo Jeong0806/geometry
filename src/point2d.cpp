@@ -46,4 +46,9 @@ auto Point2D::operator+=(const Point2D& other) -> void{
   x_ += other.x_;
   y_ += other.y_;
 }
+
+auto Point2D::operator-=(const Point2D& other) -> void{
+  x_ -= other.x_;
+  y_ -= other.y_;
+}
 }  // namespace Jeong0806::geometry
