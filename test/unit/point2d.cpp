@@ -102,6 +102,7 @@ TEST(GeometryPoint2D, SetY) {
     EXPECT_EQ(source.GetY(), kSourceY);
   }
 }
+
 TEST(GeometryPoint2D, operatorAdd) {
   for (uint32_t i; i < kTestCount; ++i) {
     const auto kSourceX = static_cast<double>(std::rand());
@@ -113,6 +114,9 @@ TEST(GeometryPoint2D, operatorAdd) {
     Point2D target(kTargetX, kTargetY);
 
     const auto point = source + target;
+
+    EXPECT_EQ(point.GetX(), kSourceX + kTargetX);
+    EXPECT_EQ(point.GetY(), kSourceY + kTargetY);
   }
 }
 
@@ -127,7 +131,26 @@ TEST(GeometryPoint2D, operatorSubtract) {
     Point2D target(kTargetX, kTargetY);
 
     const auto point = source - target;
+
+    EXPECT_EQ(point.GetX(), kSourceX - kTargetX);
+    EXPECT_EQ(point.GetY(), kSourceY - kTargetY);
   }
 }
 
+TEST(GeometryPoint2D, operatorAddEqual) {
+  for (uint32_t i; i < kTestCount; ++i) {
+    const auto kSourceX = static_cast<double>(std::rand());
+    const auto kSourceY = static_cast<double>(std::rand());
+    const auto kTargetX = static_cast<double>(std::rand());
+    const auto kTargetY = static_cast<double>(std::rand());
+
+    Point2D source(kSourceX, kSourceY);
+    Point2D target(kTargetX, kTargetY);
+
+    source += target;
+
+    EXPECT_EQ(source.GetX(), kSourceX + kTargetX);
+    EXPECT_EQ(source.GetY(), kSourceY + kTargetY);
+  }
+}
 }  // namespace Jeong0806::geometry
