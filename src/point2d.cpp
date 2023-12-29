@@ -42,13 +42,17 @@ auto Point2D::operator-(const Point2D& other) const -> Point2D {
   return Point2D(x_ - other.x_, y_ - other.y_);
 }
 
-auto Point2D::operator+=(const Point2D& other) -> void{
+auto Point2D::operator+=(const Point2D& other) -> void {
   x_ += other.x_;
   y_ += other.y_;
 }
 
-auto Point2D::operator-=(const Point2D& other) -> void{
+auto Point2D::operator-=(const Point2D& other) -> void {
   x_ -= other.x_;
   y_ -= other.y_;
+}
+
+auto Point2D::operator*(double scalar) const -> Point2D {
+  return Point2D(x_ * scalar, y_ * scalar);
 }
 }  // namespace Jeong0806::geometry
