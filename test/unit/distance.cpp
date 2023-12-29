@@ -102,7 +102,7 @@ TEST(GeometryDistance, SetValue) {
   }
 }
 
-TEST(GeometryDistance, OperatorEual) {
+TEST(GeometryDistance, OperatorEqual) {
   for (uint32_t i; i < kTestCount; ++i) {
     const auto kValue = static_cast<double>(std::rand());
 
