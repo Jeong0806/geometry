@@ -184,4 +184,18 @@ TEST(GeometryPoint2D, operatorMultiply) {
     EXPECT_EQ(point.GetY(), kSourceY * scalar);
   }
 }
+
+TEST(GeometryPoint2D, operatorDivide) {
+  for (uint32_t i; i < kTestCount; ++i) {
+    const auto kSourceX = static_cast<double>(std::rand());
+    const auto kSourceY = static_cast<double>(std::rand());
+    const auto scalar = static_cast<double>(std::rand());
+
+    Point2D source(kSourceX, kSourceY);
+    Point2D point = source / scalar;
+
+    EXPECT_EQ(point.GetX(), kSourceX / scalar);
+    EXPECT_EQ(point.GetY(), kSourceY / scalar);
+  }
+}
 }  // namespace Jeong0806::geometry
