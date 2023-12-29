@@ -59,4 +59,8 @@ auto Point2D::operator*(double scalar) const -> Point2D {
 auto Point2D::operator/(double scalar) const -> Point2D {
   return Point2D(x_ / scalar, y_ / scalar);
 }
+
+auto Point2D::operator==(const Point2D& other) const -> bool {
+  return (x_ == other.x_) && (y_ == other.y_);
+}
 }  // namespace Jeong0806::geometry
