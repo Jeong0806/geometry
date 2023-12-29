@@ -116,4 +116,18 @@ TEST(GeometryPoint2D, operatorAdd) {
   }
 }
 
+TEST(GeometryPoint2D, operatorSubtract) {
+  for (uint32_t i; i < kTestCount; ++i) {
+    const auto kSourceX = static_cast<double>(std::rand());
+    const auto kSourceY = static_cast<double>(std::rand());
+    const auto kTargetX = static_cast<double>(std::rand());
+    const auto kTargetY = static_cast<double>(std::rand());
+
+    Point2D source(kSourceX, kSourceY);
+    Point2D target(kTargetX, kTargetY);
+
+    const auto point = source - target;
+  }
+}
+
 }  // namespace Jeong0806::geometry
