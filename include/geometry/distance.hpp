@@ -155,22 +155,22 @@ class Distance {
    * @brief Add other distance object
    * @param other The other distance object
    */
-  auto operator+=(const Distance& other) const -> void;
+  auto operator+=(const Distance& other) -> void;
   /**
    * @brief Subtract other distance object
    * @param other The other distance object
    */
-  auto operator-=(const Distance& other) const -> void;
+  auto operator-=(const Distance& other) -> void;
   /**
    * @brief Multiply by scale
    * @param scale The value for multiplication
    */
-  auto operator*=(double scale) const -> void;
+  auto operator*=(double scale) -> void;
   /**
    * @brief Divide by scale
    * @param scale The value for division
    */
-  auto operator/=(double scale) const -> void;
+  auto operator/=(double scale) -> void;
 
  protected:
  private:
