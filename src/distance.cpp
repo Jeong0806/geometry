@@ -136,7 +136,11 @@ auto Distance::operator/(double scale) const -> Distance {
                   DistanceType::kNanometer);
 }
 
-auto Distance::operator+=(const Distance& other) -> void{
-  nanometer_  += other.nanometer_;
+auto Distance::operator+=(const Distance &other) -> void {
+  nanometer_ += other.nanometer_;
+}
+
+auto Distance::operator-=(const Distance &other) -> void {
+  nanometer_ -= other.nanometer_;
 }
 }  // namespace Jeong0806::geometry
