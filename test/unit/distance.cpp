@@ -221,10 +221,10 @@ TEST(GeometryDistance, OperatorBigger) {
     const auto kValue = static_cast<double>(std::rand());
     const auto KBiggerValue{kValue * 2};
 
-    Distance distance_by_killometer(KBiggerValue, Distance::DistanceType::kKilometer);
+    Distance distance_by_killometer(KBiggerValue,
+                                    Distance::DistanceType::kKilometer);
 
-    Distance distance_by_meter(kValue * 1.0e+3,
-                               Distance::DistanceType::kMeter);
+    Distance distance_by_meter(kValue * 1.0e+3, Distance::DistanceType::kMeter);
     EXPECT_TRUE(distance_by_killometer > distance_by_meter);
 
     Distance distance_by_centimeter(kValue * 1.0e+5,
@@ -250,11 +250,11 @@ TEST(GeometryDistance, OperatorBiggerEqual) {
     const auto kValue = static_cast<double>(std::rand());
     const auto KBiggerValue{kValue * 2};
 
-    Distance distance_by_killometer(KBiggerValue, Distance::DistanceType::kKilometer);
+    Distance distance_by_killometer(KBiggerValue,
+                                    Distance::DistanceType::kKilometer);
     EXPECT_TRUE(distance_by_killometer >= distance_by_killometer);
 
-    Distance distance_by_meter(kValue * 1.0e+3,
-                               Distance::DistanceType::kMeter);
+    Distance distance_by_meter(kValue * 1.0e+3, Distance::DistanceType::kMeter);
     EXPECT_TRUE(distance_by_killometer >= distance_by_meter);
 
     Distance distance_by_centimeter(kValue * 1.0e+5,
@@ -306,6 +306,43 @@ TEST(GeometryDistance, operatorAdd) {
                      kValue * 2.0);
     EXPECT_DOUBLE_EQ(distance5.GetValue(Distance::DistanceType::kKilometer),
                      kValue * 2.0);
+  }
+}
+
+TEST(GeometryDistance, operatorSubtract) {
+  for (uint32_t i; i < kTestCount; ++i) {
+    const auto kValueLhs = static_cast<double>(std::rand());
+    const auto kValueRhs = static_cast<double>(std::rand());
+
+    Distance distance_by_killometer(kValueLhs,
+                                    Distance::DistanceType::kKilometer);
+    Distance distance_by_meter(kValueRhs * 1.0e+3,
+                               Distance::DistanceType::kMeter);
+    Distance distance_by_centimeter(kValueRhs * 1.0e+5,
+                                    Distance::DistanceType::kCentimeter);
+    Distance distance_by_millimetero(kValueRhs * 1.0e+6,
+                                     Distance::DistanceType::kMillimeter);
+    Distance distance_by_micrometer(kValueRhs * 1.0e+9,
+                                    Distance::DistanceType::kMicrometer);
+    Distance distance_by_nanometer(kValueRhs * 1.0e+12,
+                                   Distance::DistanceType::kNanometer);
+
+    const auto distance1 = distance_by_killometer - distance_by_meter;
+    const auto distance2 = distance_by_killometer - distance_by_centimeter;
+    const auto distance3 = distance_by_killometer - distance_by_millimetero;
+    const auto distance4 = distance_by_killometer - distance_by_micrometer;
+    const auto distance5 = distance_by_killometer - distance_by_nanometer;
+
+    EXPECT_DOUBLE_EQ(distance1.GetValue(Distance::DistanceType::kKilometer),
+                     kValueLhs - kValueRhs);
+    EXPECT_DOUBLE_EQ(distance2.GetValue(Distance::DistanceType::kKilometer),
+                     kValueLhs - kValueRhs);
+    EXPECT_DOUBLE_EQ(distance3.GetValue(Distance::DistanceType::kKilometer),
+                     kValueLhs - kValueRhs);
+    EXPECT_DOUBLE_EQ(distance4.GetValue(Distance::DistanceType::kKilometer),
+                     kValueLhs - kValueRhs);
+    EXPECT_DOUBLE_EQ(distance5.GetValue(Distance::DistanceType::kKilometer),
+                     kValueLhs - kValueRhs);
   }
 }
 }  // namespace Jeong0806::geometry
