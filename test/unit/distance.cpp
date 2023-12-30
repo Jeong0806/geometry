@@ -245,7 +245,35 @@ TEST(GeometryDistance, OperatorBigger) {
   }
 }
 
-// TEST(GeometryDistance, OperatorBiggerEqual) {}
+TEST(GeometryDistance, OperatorBiggerEqual) {
+  for (uint32_t i; i < kTestCount; ++i) {
+    const auto kValue = static_cast<double>(std::rand());
+    const auto KBiggerValue{kValue * 2};
+
+    Distance distance_by_killometer(KBiggerValue, Distance::DistanceType::kKilometer);
+    EXPECT_TRUE(distance_by_killometer >= distance_by_killometer);
+
+    Distance distance_by_meter(kValue * 1.0e+3,
+                               Distance::DistanceType::kMeter);
+    EXPECT_TRUE(distance_by_killometer >= distance_by_meter);
+
+    Distance distance_by_centimeter(kValue * 1.0e+5,
+                                    Distance::DistanceType::kCentimeter);
+    EXPECT_TRUE(distance_by_killometer >= distance_by_centimeter);
+
+    Distance distance_by_millimetero(kValue * 1.0e+6,
+                                     Distance::DistanceType::kMillimeter);
+    EXPECT_TRUE(distance_by_killometer >= distance_by_millimetero);
+
+    Distance distance_by_micrometer(kValue * 1.0e+9,
+                                    Distance::DistanceType::kMicrometer);
+    EXPECT_TRUE(distance_by_killometer >= distance_by_micrometer);
+
+    Distance distance_by_nanometer(kValue * 1.0e+12,
+                                   Distance::DistanceType::kNanometer);
+    EXPECT_TRUE(distance_by_killometer >= distance_by_nanometer);
+  }
+}
 
 TEST(GeometryDistance, operatorAdd) {
   for (uint32_t i; i < kTestCount; ++i) {
