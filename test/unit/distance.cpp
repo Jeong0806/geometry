@@ -363,10 +363,11 @@ TEST(GeometryDistance, operatorMultiply) {
                                    Distance::DistanceType::kNanometer);
 
     const auto distance1 = distance_by_killometer * kScale;
-    const auto distance2 = distance_by_killometer * kScale;
-    const auto distance3 = distance_by_killometer * kScale;
-    const auto distance4 = distance_by_killometer * kScale;
-    const auto distance5 = distance_by_killometer * kScale;
+    const auto distance2 = distance_by_meter * kScale;
+    const auto distance3 = distance_by_centimeter * kScale;
+    const auto distance4 = distance_by_millimetero * kScale;
+    const auto distance5 = distance_by_micrometer * kScale;
+    const auto distance6 = distance_by_nanometer * kScale;
 
     EXPECT_DOUBLE_EQ(distance1.GetValue(Distance::DistanceType::kKilometer),
                      kValue * kScale);
@@ -377,6 +378,8 @@ TEST(GeometryDistance, operatorMultiply) {
     EXPECT_DOUBLE_EQ(distance4.GetValue(Distance::DistanceType::kKilometer),
                      kValue * kScale);
     EXPECT_DOUBLE_EQ(distance5.GetValue(Distance::DistanceType::kKilometer),
+                     kValue * kScale);
+    EXPECT_DOUBLE_EQ(distance6.GetValue(Distance::DistanceType::kKilometer),
                      kValue * kScale);
   }
 }
@@ -398,10 +401,11 @@ TEST(GeometryDistance, operatorDivide) {
                                    Distance::DistanceType::kNanometer);
 
     const auto distance1 = distance_by_killometer / kScale;
-    const auto distance2 = distance_by_killometer / kScale;
-    const auto distance3 = distance_by_killometer / kScale;
-    const auto distance4 = distance_by_killometer / kScale;
-    const auto distance5 = distance_by_killometer / kScale;
+    const auto distance2 = distance_by_meter / kScale;
+    const auto distance3 = distance_by_centimeter / kScale;
+    const auto distance4 = distance_by_millimetero / kScale;
+    const auto distance5 = distance_by_micrometer / kScale;
+    const auto distance6 = distance_by_nanometer / kScale;
 
     EXPECT_DOUBLE_EQ(distance1.GetValue(Distance::DistanceType::kKilometer),
                      kValue / kScale);
@@ -412,6 +416,8 @@ TEST(GeometryDistance, operatorDivide) {
     EXPECT_DOUBLE_EQ(distance4.GetValue(Distance::DistanceType::kKilometer),
                      kValue / kScale);
     EXPECT_DOUBLE_EQ(distance5.GetValue(Distance::DistanceType::kKilometer),
+                     kValue / kScale);
+    EXPECT_DOUBLE_EQ(distance6.GetValue(Distance::DistanceType::kKilometer),
                      kValue / kScale);
   }
 }
@@ -490,6 +496,44 @@ TEST(GeometryDistance, operatorSubtractEqual) {
     EXPECT_DOUBLE_EQ(
         distance_by_nanometer.GetValue(Distance::DistanceType::kKilometer),
         0.0);
+  }
+}
+
+TEST(GeometryDistance, operatorMultiplyEqual) {
+  for (uint32_t i; i < kTestCount; ++i) {
+    const auto kValue = static_cast<double>(std::rand());
+    const auto kScale = static_cast<double>(std::rand());
+
+    Distance distance_by_killometer(kValue, Distance::DistanceType::kKilometer);
+    Distance distance_by_meter(kValue * 1.0e+3, Distance::DistanceType::kMeter);
+    Distance distance_by_centimeter(kValue * 1.0e+5,
+                                    Distance::DistanceType::kCentimeter);
+    Distance distance_by_millimetero(kValue * 1.0e+6,
+                                     Distance::DistanceType::kMillimeter);
+    Distance distance_by_micrometer(kValue * 1.0e+9,
+                                    Distance::DistanceType::kMicrometer);
+    Distance distance_by_nanometer(kValue * 1.0e+12,
+                                   Distance::DistanceType::kNanometer);
+
+    distance_by_killometer *= kScale;
+    distance_by_meter *= kScale;
+    distance_by_centimeter *= kScale;
+    distance_by_millimetero *= kScale;
+    distance_by_micrometer *= kScale;
+    distance_by_nanometer *= kScale;
+
+    EXPECT_DOUBLE_EQ(distance_by_killometer.GetValue(Distance::DistanceType::kKilometer),
+                     kValue * kScale);
+    EXPECT_DOUBLE_EQ(distance_by_meter.GetValue(Distance::DistanceType::kKilometer),
+                     kValue * kScale);
+    EXPECT_DOUBLE_EQ(distance_by_centimeter.GetValue(Distance::DistanceType::kKilometer),
+                     kValue * kScale);
+    EXPECT_DOUBLE_EQ(distance_by_millimetero.GetValue(Distance::DistanceType::kKilometer),
+                     kValue * kScale);
+    EXPECT_DOUBLE_EQ(distance_by_micrometer.GetValue(Distance::DistanceType::kKilometer),
+                     kValue * kScale);
+    EXPECT_DOUBLE_EQ(distance_by_nanometer.GetValue(Distance::DistanceType::kKilometer),
+                     kValue * kScale);
   }
 }
 }  // namespace Jeong0806::geometry
