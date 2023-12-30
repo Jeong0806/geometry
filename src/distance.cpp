@@ -145,4 +145,6 @@ auto Distance::operator-=(const Distance &other) -> void {
 }
 
 auto Distance::operator*=(double scale) -> void { nanometer_ *= scale; }
+
+auto Distance::operator/=(double scale) -> void { nanometer_ /= scale; }
 }  // namespace Jeong0806::geometry
