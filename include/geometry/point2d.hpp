@@ -76,12 +76,12 @@ class Point2D {
    * @brief Set x coordinate value
    * @param x Double type input x coordinate value
    */
-  void SetX(double x);
+  auto SetX(double x) -> void;
   /**
    * @brief Set y coordinate value
    * @param y Double type input y coordinate value
    */
-  void SetY(double y);
+  auto SetY(double y) -> void;
   /**
    * @brief Get x coordinate value of this point
    * @return double x coordinate value of this point
@@ -107,15 +107,13 @@ class Point2D {
   /**
    * @brief Add target object's x, y coordinates in this object's
    * @param other Point2D object
-   * @return Point2D Point2D& Reference of Point2D object
    */
-  auto operator+=(const Point2D& other) const -> Point2D;
+  auto operator+=(const Point2D& other) -> void;
   /**
    * @brief Subtract target object's x, y coordinates in this object's
    * @param other Point2D object
-   * @return Point2D Point2D& Reference of Point2D object
    */
-  auto operator-=(const Point2D& other) const -> Point2D;
+  auto operator-=(const Point2D& other) -> void;
   /**
    * @brief Multiply scalar by the coordinates x and y of this
    * @param scalar Double type operand
